@@ -1,0 +1,14 @@
+<form method="POST" action="{% url 'add' %}">
+  {% csrf_token %}
+  <table border="1">
+    <tr>
+      <td><input type="text" name="no1" /></td>
+    </tr>
+    <tr>
+      <td><input type="text" name="no2" /></td>
+    </tr>
+    <tr>
+      <td><input type="submit" /></td>
+    </tr>
+  </table>
+</form>

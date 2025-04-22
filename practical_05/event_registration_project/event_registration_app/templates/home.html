@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Registration</title>
+  </head>
+  <body>
+    <h2>Event Registration</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Register</button>
+    </form>
+    <ul>
+      {% for r in registrations %}
+      <li>
+        {{ r.name }} - {{ r.event_name }}
+        <a href="{% url 'cancel_registration' r.id %}">Cancel</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

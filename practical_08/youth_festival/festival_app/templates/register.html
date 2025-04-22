@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register for Youth Festival</title>
+  </head>
+  <body>
+    <h2>Register for Youth Festival</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+    </br>
+    <a href="{% url 'home' %}">Back to Home</a>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Address Book</title>
+  </head>
+  <body>
+    <h2>Address Book</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Add</button>
+    </form>
+    <ul>
+      {% for c in contacts %}
+      <li>
+        {{ c.name }} - {{ c.phone }}
+        <a href="{% url 'update_contact' c.id %}">Edit</a> |
+        <a href="{% url 'delete_contact' c.id %}">Delete</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
